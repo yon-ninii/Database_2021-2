@@ -1,0 +1,39 @@
+<!--
+ Copyright 2021 kms
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+     http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<h1>{{ title }}</h1>
+
+<table>
+  <tr>
+    <td>Dname</td>
+    <td>Dnumber</td>
+    <td>Mgr_ssn</td>
+    <td>Mgr_start_date</td>
+  </tr>
+  {{#each dept_res}}
+    <form method="post">
+      <tr>
+        <!-- input tag를 사용하여 입력 가능한 형태로 변경함(다른 방법도 검색하면 있음) -->
+        <td><input type="text" name="dname" placeholder={{Dname}}></td>
+        <td>{{Dnumber}}</td>
+        <td>{{Mgr_ssn}}</td>
+        <td>{{Mgr_start_date}}</td>
+        <!-- formaction 속성을 활용하여 입력한 값을 넘겨줌) -->
+        <td><input type="submit" value="수정" formaction="/update/department"></td>
+      </tr>    
+    </form>
+  {{/each}}
+</table>
