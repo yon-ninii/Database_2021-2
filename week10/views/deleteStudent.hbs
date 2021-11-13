@@ -1,0 +1,29 @@
+<h1>{{ title }}</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Sex</td> 
+        <td>Ssn</td>
+        <td>Year</td>
+    </tr>
+    {{#each student}}
+        <form method="post">
+            <tr>
+                <td>{{name}}</td>
+                <td>{{sex}}</td>
+                <td>{{Ssn}}</td>
+                <td>{{year}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delBtn2'
+                        type="submit"
+                        value="{{Ssn}}"
+                        formaction="/delete/student">
+                        삭제                      
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
