@@ -1,0 +1,28 @@
+                <button onclick="location.href='/select'">조회 페이지로 이동</button >
+                <button onclick="location.href='/insert'">입력 페이지로 이동</button >
+                <button onclick="location.href='/update'">수정 페이지로 이동</button >
+                <button onclick="location.href='/delete'">삭제 페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<table>
+    <tr>
+        <td>공항 번호</td>
+        <td>공항 이름</td>
+        <td>도시</td>
+    </tr>
+    {{#each Airport}}
+            <tr>
+                <td>{{Airport_code}}</td>
+                <td>{{Name}}</td>
+                <td>{{City}}</td>
+            </tr>
+    {{/each}}
+</table>
+
+<p>삭제하고 싶은 공항 번호를 입력해주세요.</p>
+
+<form method="post" action='/delete/airport'>
+    <tr>
+      <td><input type ="text" name="Airport_code" placeholder= "공항 번호"></td>
+      <td><input type = "submit" value = "삭제" formaction = "/delete/airport"></td>
+    </tr>

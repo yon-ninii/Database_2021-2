@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<p>예약 확정</p>
+<table>
+    <tr>
+        <td>항공사 번호</td>
+        <td>경로 번호</td>
+    </tr>
+    {{#each middle}}
+        <tr>
+            <td>{{flight_number}}</td>
+            <td>{{leg_number}}</td>
+        </tr>
+    {{/each}}
+    <tr>
+        <td>좌석 번호</td>
+    </tr>
+    {{#each seatnum}}
+        <tr>
+            <td>{{seat_number}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+<p>현재 예약 진행하시는 항공기의 추가 정보입니다.</p>
+<p>확실한 예약 진행을 위해 위 정보를 순서대로 입력해주세요.</p>
+
+<form method="post" action='/login/insertconfirm'>
+    <tr>
+      <td><input type ="text" name="Flight_number" placeholder= "항공사 번호"></td>
+      <td><input type ="text" name="Leg_number" placeholder= "경로 번호"></td>
+      <td><input type ="text" name="Seat_number" placeholder= "좌석 번호"></td>
+      <td><input type = "submit" value = "확인" formaction = "/login/insertconfirm"></td>
+      <button onclick="location.href='/login/insert'">취소</button >
+    </tr>

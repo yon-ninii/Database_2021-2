@@ -1,0 +1,26 @@
+                <button onclick="location.href='/select'">조회 페이지로 이동</button >
+                <button onclick="location.href='/insert'">입력 페이지로 이동</button >
+                <button onclick="location.href='/update'">수정 페이지로 이동</button >
+                <button onclick="location.href='/delete'">삭제 페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<table>
+    <tr>
+        <td>항공기 번호</td>
+        <td>항공기 종류</td>
+    </tr>
+    {{#each Airplane}}
+            <tr>
+                <td>{{Airplane_id}}</td>
+                <td>{{Airplane_type}}</td>
+            </tr>
+    {{/each}}
+</table>
+
+<p>삭제하고 싶은 항공기 번호를 입력해주세요.</p>
+
+<form method="post" action='/delete/airplane'>
+    <tr>
+      <td><input type ="text" name="Airplane_id" placeholder= "항공기 번호"></td>
+      <td><input type = "submit" value = "삭제" formaction = "/delete/airplane"></td>
+    </tr>

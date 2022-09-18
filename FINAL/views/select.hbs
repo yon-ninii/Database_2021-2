@@ -1,0 +1,51 @@
+                <button onclick="location.href='insert'">입력 페이지로 이동</button >
+                <button onclick="location.href='update'">수정 페이지로 이동</button >
+                <button onclick="location.href='delete'">삭제 페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<table>
+    <tr>
+        <td>공항 번호</td>
+        <td>공항 이름</td>
+        <td>도시</td>
+    </tr>
+    {{#each Airport}}
+        <tr>
+            <td>{{Airport_code}}</td>
+            <td>{{Name}}</td>
+            <td>{{City}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+<h1>{{ title2 }}</h1>
+<table>
+    <tr>
+        <td>항공기 번호</td>
+        <td>항공기 종류</td>
+    </tr>
+    {{#each Airplane}}
+        <tr>
+            <td>{{Airplane_id}}</td>
+            <td>{{Airplane_type}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+<h1>{{ title3 }}</h1>
+<table>
+    <tr>
+        <td>항공사 번호</td>
+        <td>경로 번호</td>
+        <td>날짜</td>
+        <td>항공기 번호</td>
+    </tr>
+    {{#each Instance}}
+        <tr>
+            <td>{{Flight_number}}</td>
+            <td>{{Leg_number}}</td>
+            <td>{{Date}}</td>
+            <td>{{Airplane_id}}</td>
+        </tr>
+    {{/each}}
+</table>

@@ -1,0 +1,42 @@
+                <button onclick="location.href='/login'">홈페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<p>현재 항공편 정보</p>
+<table>
+    <tr>
+        <td>날짜</td>
+        <td>출발 시간</td>
+        <td>도착 시간</td>
+        <td>출발 공항</td>
+        <td>도착 공항</td>
+        <td>항공사</td>
+        <td>가격</td>
+        <td>이용 가능한 좌석 수</td>
+    </tr>
+    {{#each reserve}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{scheduled_departure_time}}</td>
+            <td>{{scheduled_arrival_time}}</td>
+            <td>{{departure_airport_code}}</td>
+            <td>{{arrive_airport_code}}</td>
+            <td>{{airline}}</td>
+            <td>{{fare}}0000원</td>
+            <td>{{available_seats}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+<p>예약하고 싶은 항공편의 항공사, 날짜, 출발 공항, 도착 공항을 입력해주세요.</p>
+<p>이용 가능한 좌석 수가 NULL이면 모든 좌석 이용 가능합니다.</p>
+<p>좌석 번호는 선착순으로 정해집니다.</p>
+<p>[주의! 날짜는 yyyy-mm-dd 형식으로 입력해주세요]</p>
+
+<form method="post" action='/login/insert'>
+    <tr>
+      <td><input type ="text" name="Airline" placeholder= "항공사"></td>
+      <td><input type ="text" name="Date" placeholder= "날짜"></td>
+      <td><input type ="text" name="D_airport" placeholder= "출발 공항"></td>
+      <td><input type ="text" name="A_airport" placeholder= "도착 공항"></td>
+      <td><input type = "submit" value = "예약" formaction = "/login/insert"></td>
+    </tr>

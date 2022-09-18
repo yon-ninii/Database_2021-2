@@ -1,0 +1,50 @@
+                <button onclick="location.href='/select'">조회 페이지로 이동</button >
+                <button onclick="location.href='/insert'">입력 페이지로 이동</button >
+                <button onclick="location.href='/update'">수정 페이지로 이동</button >
+                <button onclick="location.href='/delete'">삭제 페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<p>[주의! 날짜는 yyyy-mm-dd 형식으로 입력해주세요]</p>
+<table>
+    <tr>
+        <td>항공사 번호</td>
+        <td>운항 경로 번호</td>
+        <td>날짜</td>
+        <td>항공기 번호</td>
+    </tr>
+  {{#each Instance}}
+    <tr>
+      <td>{{Flight_number}}</td>
+      <td>{{Leg_number}}</td>
+      <td>{{Date}}</td>
+      <td>{{Airplane_id}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h1>항공기 정보</h1>
+<p>여기서 항공기 정보를 확인 후 현재 테이블에 있는 항공기로 변경해주세요.</p>
+<table>
+    <tr>
+        <td>항공기 번호</td>
+        <td>항공기 종류</td>
+    </tr>
+  {{#each Airplane}}
+    <tr>
+      <td>{{Airplane_id}}</td>
+      <td>{{Airplane_type}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<p>수정하고 싶은 값을 입력하고 나머지 빈칸을 채워주세요.</p>
+<p> [주의! 항공기 번호만 수정이 가능합니다.] (날짜는 yyyy-mm-dd 형식으로 입력해주세요.) </p>
+
+<form method="post" action='/update/leg_instance'>
+    <tr>
+      <td><input type ="text" name="Flight_number" placeholder= "항공사 번호"></td>
+      <td><input type ="text" name="Leg_number" placeholder= "운항 경로 번호"></td>
+      <td><input type ="text" name="Date" placeholder= "날짜"></td>
+      <td><input type ="text" name="Airplane_id" placeholder= "항공기 번호"></td>
+      <td><input type = "submit" value = "수정" formaction = "/update/leg_instance"></td>
+    </tr>

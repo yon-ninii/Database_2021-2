@@ -1,0 +1,61 @@
+                <button onclick="location.href='/select'">조회 페이지로 이동</button >
+                <button onclick="location.href='/update'">수정 페이지로 이동</button >
+                <button onclick="location.href='/delete'">삭제 페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>공항 데이터 삽입</h1>
+<form name="airport" method="post" action='/insert'>
+    <div>
+        <label for="Airport_code">공항 번호</label>
+        <input id="Airport_code" name="Airport_code" type="text" required placeholder="Airport_code">
+    </div>
+    <div>
+        <label for="Name">공항 이름</label>
+        <input id="Name" name="Name" type="text" required placeholder="Name">
+    </div>
+    <div>
+        <label for="City">도시</label>
+        <input id="City" name="City" type="text" required placeholder="City">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>
+
+<h1>항공기 데이터 삽입</h1>
+<form id="airplane" method="post" action='/insert'>
+    <div>
+        <label for="Airplane_id">항공기 번호</label>
+        <input id="Airpland_id" name="Airplane_id" type="text" required placeholder="Airplane_id">
+    </div>
+    <div>
+        <label for="Airplane_type">항공기 종류</label>
+        <input id="Airplane_type" name='Airplane_type' type="text" required placeholder="Airplane_type">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>
+
+<h1>항공편 데이터 삽입</h1>
+<p>[주의! 날짜는 yyyy-mm-dd 형식으로 입력해주세요]</p>
+<form id="Leg_instance" method="post" action='/insert'>
+    <div>
+        <label for="Flight_number">항공사 번호</label>
+        <input id="Flight_number" name="Flight_number" type="text" required placeholder="Flight_number">
+    </div>
+    <div>
+        <label for="Leg_number">경로 번호</label>
+        <input id="Leg_number" name='Leg_number' type="text" required  placeholder="Leg_number">
+    </div>
+    <div>
+        <label for="Date">날짜</label>
+        <input id="Date" name='Date' type="text" required placeholder="Date">
+    </div>
+    <div>
+        <label for="Airplane_id">항공기 번호</label>
+        <input id="Airplane_id" name='Airplane_id' type="text" required placeholder="Airplane_id">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>

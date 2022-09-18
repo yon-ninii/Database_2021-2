@@ -1,0 +1,41 @@
+                <button onclick="location.href='/login'">홈페이지로 이동</button >
+                <button onclick="location.href='/'">로그아웃</button >
+<h1>{{ title }}</h1>
+<p>나의 예약</p>
+<table>
+    <tr>
+        <td>날짜</td>
+        <td>출발 시간</td>
+        <td>도착 시간</td>
+        <td>출발 공항</td>
+        <td>도착 공항</td>
+        <td>항공사</td>
+        <td>좌석 번호</td>
+        <td>가격</td>
+    </tr>
+    {{#each seat}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{scheduled_departure_time}}</td>
+            <td>{{scheduled_arrival_time}}</td>
+            <td>{{departure_airport_code}}</td>
+            <td>{{arrive_airport_code}}</td>
+            <td>{{airline}}</td>
+            <td>{{seat_number}}</td>
+            <td>{{fare}}0000원</td>
+        </tr>
+    {{/each}}
+</table>
+
+<p>취소하고 싶은 예약의 항공사, 날짜, 출발 공항, 도착 공항, 좌석 번호를 입력해주세요.</p>
+<p>[주의! 날짜는 yyyy-mm-dd 형식으로 입력해주세요]</p>
+
+<form method="post" action='/login/delete'>
+    <tr>
+      <td><input type ="text" name="Airline" placeholder= "항공사"></td>
+      <td><input type ="text" name="Date" placeholder= "날짜"></td>
+      <td><input type ="text" name="D_airport" placeholder= "출발 공항"></td>
+      <td><input type ="text" name="A_airport" placeholder= "도착 공항"></td>
+      <td><input type ="text" name="Seat_number" placeholder= "좌석 번호"></td>
+      <td><input type = "submit" value = "예약 취소" formaction = "/login/delete"></td>
+    </tr>
